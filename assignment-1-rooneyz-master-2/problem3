@@ -1,0 +1,9 @@
+#!/bin/bash
+# Name: problem3
+# This script will print the number of subdirectories directly contained with
+# a directory whose path name is specified by the first parameter, excluding
+# any directory starting with a '.'(dot)
+# For example: bash problem3 /Users/zachrooney/Desktop/Northeastern/CS5007
+# prints '2'
+
+find $1 -mindepth 1 -maxdepth 1 -type d ! -name '.*' -print | wc -w

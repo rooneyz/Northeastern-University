@@ -1,0 +1,57 @@
+#!/bin/bash
+# Name: problem1
+# This script saves the 'man' page for the command specified by its first parameter to a file # whose name is the command followed by ".txt". For example, 'bash problem1 head' would create # a file "head.txt" in the current directory with the contents of the 'head' man page.
+
+
+man $1 > $1.txt
+
+
+
+
+#!/bin/bash
+# Name: problem2
+# This script takes a list of arguments and prints the largest one.
+# For example, ' bash problem2 4 2 6 45 24 1 ' would print '45'
+
+array=("$@")
+printf '%s\n' "${array[@]}" | sort | tail -n -1
+
+
+
+
+#!/bin/bash
+# Name: problem3
+# This script will print the number of subdirectories directly contained with
+# a directory whose path name is specified by the first parameter, excluding
+# any directory starting with a '.'(dot)
+# For example: bash problem3 /Users/zachrooney/Desktop/Northeastern/CS5007
+# prints '2'
+
+find $1 -mindepth 1 -maxdepth 1 -type d ! -name '.*' -print | wc -w
+
+
+
+
+
+#!/bin/bash
+# Name: problem4
+# This script will take zero or more numeric parameters and prints the sum of # the their values
+# For example: bash problem4 1 2 3 4 5 then prints '15'
+
+n=$( echo "${*}" | tr " " +)
+echo $(( "$n" ))
+
+
+
+
+
+#!/bin/bash
+# Name: problem5
+# This script will take the date parameters of the Format 'YYYY-MM-DD' and
+# prints is as a 'Month DD, YYYY'
+# For example: bash problem5 2019-05-10 then prints 'May 10, 2019'
+
+IFS=‘-’ read -r year month day <<< $*
+newDay=$(echo $day | sed 's/^0*//')
+arr=( Null January February March April May June July August September October November December )
+echo ${arr[$month]}" "$newDay", "$year

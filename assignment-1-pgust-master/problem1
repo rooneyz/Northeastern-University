@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# This script saves the 'man' page for the command 
+# specified by its first parameter, to a file whose 
+# name is the command name followed by ".txt". For 
+# example, 'bash problem1 cat' would create a file 
+# "cat.txt" with the contents of the "cat" man page. 
+
+man ${1} > ${1}.txt

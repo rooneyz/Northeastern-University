@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# This script prints the sum of the numeric parameter 
+# values or 0 if no parameters are specified. Replaces
+# spaces by "+" signs between values, then evaluates
+# as an arithmetic expression.
+
+expr=$( tr " " "+" <<< "${*}" )
+echo $(( expr ))

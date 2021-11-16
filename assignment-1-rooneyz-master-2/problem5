@@ -1,0 +1,10 @@
+#!/bin/bash
+# Name: problem5
+# This script will take the date parameters of the Format 'YYYY-MM-DD' and
+# prints is as a 'Month DD, YYYY'
+# For example: bash problem5 2019-05-10 then prints 'May 10, 2019'
+
+IFS=‘-’ read -r year month day <<< $*
+newDay=$(echo $day | sed 's/^0*//')
+arr=( Null January February March April May June July August September October November December )
+echo ${arr[$month]}" "$newDay", "$year

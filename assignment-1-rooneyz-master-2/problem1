@@ -1,0 +1,6 @@
+#!/bin/bash
+# Name: problem1
+# This script saves the 'man' page for the command specified by its first parameter to a file # whose name is the command followed by ".txt". For example, 'bash problem1 head' would create # a file "head.txt" in the current directory with the contents of the 'head' man page.
+
+
+man $1 > $1.txt

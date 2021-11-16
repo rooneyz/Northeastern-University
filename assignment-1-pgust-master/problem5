@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# This script takes a date parameter of the form
+# "2019-05-09" and prints it as "May 9, 2019".
+# Uses 'read' to capture the "-" separated fields,
+# then uses month number as index into array of
+# month names.
+
+# array of months
+months=( Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec )
+
+# split argument string into year, month, day
+IFS='-' read -r year month day <<< "${1}"
+
+# interpret month and day as decimal numbers
+month=$((10#$month))
+day=$((10#$day))
+
+# print mm DD, YYYY
+printf '%s %d, %d\n' ${months[month-1]} ${day} ${year}

@@ -1,0 +1,11 @@
+#!/bin/bash
+# Name: problem2
+# This script takes a list of arguments and prints the largest one.
+# For example, ' bash problem2 4 2 6 45 24 1 ' would print '45'
+
+array=("$@")
+printf '%s\n' "${array[@]}" | sort | tail -n -1
+
+
+
+
