@@ -1,0 +1,68 @@
+Problem 1
+CS 5006 Final Exam
+
+Consider the function countDuplicates() in Problem1.java. This
+function counts the number of array elements that are duplicates of
+at least one other element in the array. 
+
+Analyze this algorithm by answering the following questions.
+
+----
+a) Show an array of eight values that exhibits worst-case behavior
+for this function.
+
+int[] arr = {8, 7, 6, 5, 4, 3, 2, 1};
+
+
+----
+b) Propose an f(n) for this function with a worst-case array based on 
+your estimate of the operations performed, similar to what we did in
+the lectures. Briefly explain your estimate.
+
+f(n) = n * (n - 1) = n^2 - n
+Big (O) = n^2
+The first loop would run 'n' times and the second inner loop would run (n-1) times because it starts at the next number
+in the array and there are no duplicates so the second inner loop would never 'break'.
+
+----
+c) Propose a characteristic g(n) for your worst-case f(n) and prove 
+that this function is Θ(g(n)) (consider O(g(n)) and Ω(g(n))).
+
+g(n) = n^2 + 1, c1 = 1, n0 = 2
+n <= n^2 - n <= n^2 + 1 for all n >= 2.
+
+
+----
+d) Show an array of eight values that exhibits best-case behavior
+for this function.
+
+int[] arr = {2, 2, 2, 2, 2, 2, 2, 2};
+
+----
+e) Propose an f(n) for this function with a best-case array based on 
+your estimate of the operations performed, similar to what we did in
+the lectures. Briefly explain your estimate.
+
+f(n) = 2n
+Since all the numbers are the same, the inner loop break statement will be used every time and only 1 element of the nested
+loops will be compared. This would result in the outer loop running through n times and checking once each time so 2n.
+
+
+----
+f) Propose a characteristic g(n) for your best-case f(n) and prove 
+that this function is Θ(g(n)) (consider O(g(n)) and Ω(g(n))).
+
+g(n) = 2n + 1, n0 =  2
+n <= 2n <= 2n + 1 for all n >= 2.
+
+----
+g) Suppose that countDuplicates() was modified to always expect its
+input in ascending order. Ignoring the time to sort the array, what
+would be the worst and best case time complexity of this modified 
+function? Explain your answer.
+
+The time complexity would both be 2n. With a slight code modification you can have the break after comparing a[i] to a[i +1]
+If it is in acending order then you know that if a[i] != a[i + 1] then it won't equal a[ i + 2 ], etc. So you only have
+do one check on the inner loop. With even more change you could get it down to a time of just 'n' by having one loop
+check the current number and the next one in the array.
+

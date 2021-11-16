@@ -1,0 +1,112 @@
+Problem 1
+CS 5006 Final Exam
+
+Consider the function countDuplicates() in Problem1.java. This
+function counts the number of array elements that are duplicates of
+at least one other element in the array. 
+
+Analyze this algorithm by answering the following questions.
+
+----
+a) Show an array of eight values that exhibits worst-case behavior
+for this function.
+
+{1, 2, 3, 4, 5, 6, 7, 8} 
+
+
+----
+b) Propose an f(n) for this function with a worst-case array based on 
+your estimate of the operations performed, similar to what we did in
+the lectures. Briefly explain your estimate.
+
+The inner loop executes ((n**2) - n)/2 times because it never finds a
+duplicate Each iterations takes 3 instructions of loop overhead and
+5 instructions to compare a[i] to a[j] for a total of 8 instructions.
+The outer loop executes n times. Each iteration takes 3 instructions
+of loop overhead and 3 instructions to initialize the inner loop
+variable. The function takes 2 more instructions to initialize the
+count and the outer loop variable.
+
+Therefore,
+
+f(n) = 2 + 6*n + 4*(n**2) - 4*n = 2 + 2*n + 4*(n**2)
+
+
+----
+c) Propose a characteristic g(n) for your worst-case f(n) and prove 
+that this function is Θ(g(n)) (consider O(g(n)) and Ω(g(n))). 
+
+g(n) = n**2
+
+For O(n**2), find c and n0 such that c*(n**2) >= 2 + 2*n + 4*(n**2) 
+for n >= n0. The inequality is true for c = 5, n0 = 3, so f(n) is O(n**2).
+
+For Ω(n**2), find c and n0 such that c*(n**2) <= 2 + 2*n + 4*(n**2) 
+for n >= n0. The inequality is true for c = 4, n0 = 1, so f(n) is Ω(n**2).
+
+The algorithm is Θ(n**2) because it is both O(n**2) and Ω(n**2).
+
+
+----
+d) Show an array of eight values that exhibits best-case behavior
+for this function.
+
+{1, 1, 1, 1, 1, 1, 1, 1} 
+
+
+----
+e) Propose an f(n) for this function with a best-case array based on 
+your estimate of the operations performed, similar to what we did in
+the lectures. Briefly explain your estimate.
+
+The inner loop executes 1 time because every value is duplicate. The
+iteration takes 5 instructions to compare a[i] to a[j], and 1 instruction 
+to increment the count for a total of 6 instructions. The outer loop  
+executes n times. Each iteration takes 3 instructions of loop overhead 
+plus the inner loop. The function takes 2 more instructions to initialize 
+the count and the outer loop variable.
+
+Therefore,
+
+f(n) = 2 + n*(3 + 6) = 2 + 9*n
+
+
+----
+f) Propose a characteristic g(n) for your best-case f(n) and prove 
+that this function is Θ(g(n)) (consider O(g(n)) and Ω(g(n))).
+
+g(n) = n
+
+For O(n), find c and n0 such that c*n >= 9*n + 2 for n > n0. The
+inequality is true for c = 10, n0 = 2, so f(n) is O(n).
+
+For Ω(n), find c and n0 such that c*n <= 9*n + 2 for n > n0. The
+inequality is true for c = 9, n0 = 1, so f(n) is Ω(n).
+
+The algorithm is Θ(n) because it is both O(n) and Ω(n).
+
+
+----
+g) Suppose that countDuplicates() was modified to always expect its
+input in ascending order. Ignoring the time to sort the array, what
+is the both the worst and best case time complexity of this modified 
+function? Explain you answer
+
+Here is an implementation of the modified function.
+
+	public static int countDuplicates(int[] a) {
+		int count = 0;
+		for (int i = 1; i < a.length; i++) {
+	    	if (a[i-1] == a[i]) {
+	    		count++;
+			}
+		}
+		return count;
+	}
+
+Because the array is sorted, duplicates are adjacent so it is no 
+longer necessary to have an inner loop. Ignoring the time to sort 
+the array, the best and worst-case time complexity is Θ(n) because 
+the loop always executes n-1 times and comparing adjacent elements 
+and incrementing the count within the loop requires no more than a 
+constant number of instructions no matter what input it receives.
