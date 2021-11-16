@@ -1,0 +1,37 @@
+Start final-4
+Borrower 2 [ 0]: borrowed book 0
+Borrower 0 [ 0]: borrowed book 1
+Borrower 1 [ 0]: borrowed book 2
+Borrower 3 [ 0]: no book to borrow
+Borrower 2 [ 1]: reading book 0
+Borrower 0 [ 1]: reading book 1
+Borrower 1 [ 1]: reading book 2
+Borrower 3 [ 1]: no book to borrow
+Borrower 0 [ 2]: returned book 1
+Borrower 2 [ 2]: returned book 0
+Borrower 1 [ 2]: returned book 2
+Borrower 3 [ 2]: borrowed book 0
+Borrower 0 [ 3]: borrowed book 1
+Borrower 3 [ 3]: reading book 0
+Borrower 2 [ 3]: borrowed book 2
+Borrower 1 [ 3]: no book to borrow
+Borrower 0 [ 4]: reading book 1
+Borrower 3 [ 4]: returned book 0
+Borrower 2 [ 4]: reading book 2
+Borrower 1 [ 4]: borrowed book 0
+Borrower 2 [ 5]: returned book 2
+Borrower 1 [ 5]: reading book 0
+Borrower 3 [ 5]: borrowed book 2
+Borrower 0 [ 5]: returned book 1
+Borrower 2 [ 6]: borrowed book 1
+Borrower 3 [ 6]: reading book 2
+Borrower 1 [ 6]: returned book 0
+Borrower 0 [ 6]: borrowed book 0
+Borrower 2 [ 7]: returned book 1
+Borrower 1 [ 8]: finished 2 library
+Borrower 2 [ 8]: finished 3 library
+Borrower 3 [ 7]: returned book 2
+Borrower 0 [ 7]: returned book 0
+Borrower 3 [ 8]: finished 2 library
+Borrower 0 [ 8]: finished 3 library
+End final-4

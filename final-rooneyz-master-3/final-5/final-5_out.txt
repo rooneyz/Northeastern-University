@@ -1,0 +1,59 @@
+Start final-5
+Student 0: study
+Student 1: study
+Student 1: pick up left fork
+Student 2: study
+Student 2: pick up left fork
+Student 2: pick up right fork
+Student 2: eat
+Student 2: put down right fork
+Student 2: put down left fork
+Student 2: study
+Student 1: pick up right fork
+Student 1: eat
+Student 1: put down right fork
+Student 1: put down left fork
+Student 2: pick up left fork
+Student 2: pick up right fork
+Student 1: study
+Student 0: pick up left fork
+Student 2: eat
+Student 2: put down right fork
+Student 2: put down left fork
+Student 0: pick up right fork
+Student 0: eat
+Student 2: study
+Student 0: put down right fork
+Student 2: pick up left fork
+Student 0: put down left fork
+Student 2: pick up right fork
+Student 0: study
+Student 1: pick up left fork
+Student 2: eat
+Student 2: put down right fork
+Student 2: put down left fork
+Student 2: meal ticket expired
+Student 1: pick up right fork
+Student 1: eat
+Student 1: put down right fork
+Student 1: put down left fork
+Student 1: study
+Student 0: pick up left fork
+Student 0: pick up right fork
+Student 0: eat
+Student 0: put down right fork
+Student 0: put down left fork
+Student 0: study
+Student 1: pick up left fork
+Student 1: pick up right fork
+Student 1: eat
+Student 1: put down right fork
+Student 1: put down left fork
+Student 1: meal ticket expired
+Student 0: pick up left fork
+Student 0: pick up right fork
+Student 0: eat
+Student 0: put down right fork
+Student 0: put down left fork
+Student 0: meal ticket expired
+End final-5
